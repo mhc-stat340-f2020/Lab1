@@ -1,0 +1,103 @@
+---
+title: "R Lab: Multiple Linear Regression"
+subtitle: "STAT 340: Applied Regression"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+## Load libraries
+kch <- read.csv("https://raw.githubusercontent.com/matackett/intro-regression/master/data/KingCountyHouses.csv")
+```
+
+## Housing prices and log transformations.
+
+#### The dataset kingCountyHouses.csv contains data on over 20,000 houses sold in King County, washington (Kaggle 2018a). The dataset includes the following variables:
+
+- \texttt{price} = selling price of the house
+- \texttt{date} = date house was sold, measured in days since January, 2014
+- \texttt{bedrooms} = number of bedrooms
+- \texttt{bathrooms} = number of bathrooms
+- \texttt{sqft} = interior square footage
+- \texttt{floors} = number of floors
+- \texttt{waterfront} = 1 if the house has a view of the waterfront, 0 otherwise
+- \texttt{yr\_built} = year the house was built
+- \texttt{yr\_renovated} = 0 if the house was never renovated, the year the house was renovated if else
+
+### We wish to create a linear model to predict the house's selling price.
+
+#### (a) Generate appropriate graphs and summary statistics detailing both \texttt{price} and \texttt{sqft} individually and then together. What do you notice?
+
+```{r}
+
+```
+
+
+#### (b) Consider a simple linear regression model with \texttt{price} as the response variable and \texttt{sqft} as the explanatory variable (Model 1). Interpret the slope coefficient $\beta_1$. Are all conditions met for linear regression?
+
+```{r}
+
+```
+
+
+#### (c) Create a new variable, \texttt{logprice}, the natural log of \texttt{price}. Fit Model 2, where \texttt{logprice} is now the response variable and \texttt{sqft} is still the explanatory variable. Write out the regression equation in matrix form.
+
+```{r}
+
+```
+
+
+#### (d) How does \texttt{logprice} change when \texttt{sqft} increases by 1?
+
+
+
+#### (e) Recall that $log(a)-log(b)-log(\frac{a}{b})$, and use this to derive how \texttt{price} changes as \texttt{sqft} increases by 1.
+
+
+
+#### (f) Are all the conditions for linear regression met?
+
+
+
+#### (g) Create a new variable, \texttt{logsqft}, the natural log of \texttt{sqft}. Fit Model 3 where \texttt{price} and \texttt{logsqft} are the response and explanatory variables, respectively. Write out the regression line equation in matrix form.
+
+```{r}
+
+```
+
+
+#### (h) How does predicted \texttt{price} change as \texttt{logsqft} increases by 1 in Model 3?
+
+
+
+#### (i) How does predicted \texttt{price} change as \texttt{sqft} increases by 1\%? As a hint, this is the same as multiplying \texttt{sqft} by 1.01.
+
+
+
+#### (j) Are the conditions for linear regression met for Model 3? Why or why not?
+
+
+
+#### (k) Fit Model 4, with \texttt{logsqft} and \texttt{logprice} as the response and explanatory variables, respectively. Write out the regression line equation in matrix form.
+
+```{r}
+
+```
+
+
+#### (l) In Model 4, what is the effect on \texttt{price} corresponding to a 1\% increase in \texttt{sqft}?
+
+
+
+#### (m) Are the linear regression conditions satisfied in Model 4? Why or why not?
+
+
+
+
+
+## References
+
+Kaggle. 2018a. "House Sales in King County, USA." https://www.kaggle.com/harlfoxem/housesalesprediction/home.
+
+P. Roback and J. Legler. 2020. \emph{Beyond Multiple Linear Regression: Applied Generalized Linear Models and Multilevel Models in R}.
